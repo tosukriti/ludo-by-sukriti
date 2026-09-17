@@ -33,7 +33,7 @@ export function GameSetup({ onStart }: { onStart: (players: Player[]) => void })
 
   return (
     <div className="w-full max-w-md" style={{ animation: "pop-in 0.4s ease-out" }}>
-      <div className="rounded-3xl border border-white/50 bg-white/80 p-6 shadow-2xl backdrop-blur-xl sm:p-8">
+      <div className="min-w-0 rounded-3xl border border-white/50 bg-white/80 p-4 shadow-2xl backdrop-blur-xl sm:p-8">
         <div className="mb-6 flex flex-col items-center text-center">
           <div className="mb-3 grid size-14 place-items-center rounded-2xl bg-gradient-to-br from-rose-500 via-amber-400 to-blue-500 shadow-lg">
             <Dice5 className="size-8 text-white" strokeWidth={2} />
@@ -54,7 +54,7 @@ export function GameSetup({ onStart }: { onStart: (players: Player[]) => void })
                 key={n}
                 type="button"
                 onClick={() => setCount(n as 2 | 3 | 4)}
-                className={`rounded-xl border-2 py-2.5 text-sm font-bold transition-all ${
+                className={`min-w-0 rounded-xl border-2 py-2.5 text-sm font-bold transition-all ${
                   count === n
                     ? "border-slate-900 bg-slate-900 text-white shadow-md"
                     : "border-slate-200 bg-white text-slate-600 hover:border-slate-300"
@@ -98,7 +98,7 @@ export function GameSetup({ onStart }: { onStart: (players: Player[]) => void })
                     }`}
                     aria-pressed={!cfg.isCPU}
                   >
-                    <User className="size-3.5" /> Human
+                    <User className="size-3.5" /> <span className="hidden sm:inline">Human</span>
                   </button>
                   <button
                     type="button"
@@ -108,7 +108,7 @@ export function GameSetup({ onStart }: { onStart: (players: Player[]) => void })
                     }`}
                     aria-pressed={cfg.isCPU}
                   >
-                    <Bot className="size-3.5" /> CPU
+                    <Bot className="size-3.5" /> <span className="hidden sm:inline">CPU</span>
                   </button>
                 </div>
               </div>
