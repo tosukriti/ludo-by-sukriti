@@ -23,11 +23,11 @@ export default function Page() {
   const accent = currentPlayer ? COLORS[currentPlayer.color].base : "#0f172a"
 
   return (
-    <main className="min-h-dvh bg-gradient-to-br from-rose-100 via-amber-50 to-blue-100 p-3 sm:p-6">
-      <div className="mx-auto flex max-w-5xl flex-col gap-6 lg:flex-row lg:items-start lg:justify-center">
+    <main className="min-h-dvh overflow-x-hidden bg-gradient-to-br from-rose-100 via-amber-50 to-blue-100 px-3 py-4 pb-8 sm:p-6">
+      <div className="mx-auto flex w-full max-w-5xl flex-col gap-4 sm:gap-6 lg:flex-row lg:items-start lg:justify-center">
         {/* Header + board */}
-        <div className="flex w-full flex-col items-center gap-4 lg:max-w-[560px]">
-          <header className="flex w-full items-center justify-between gap-3">
+        <div className="flex w-full flex-col items-center gap-3 sm:gap-4 lg:max-w-[560px]">
+          <header className="flex w-full items-center justify-between gap-2 sm:gap-3">
             <div>
               <h1 className="bg-gradient-to-r from-rose-600 via-amber-500 to-blue-600 bg-clip-text text-2xl font-black tracking-tight text-transparent sm:text-3xl">
                 Ludo
@@ -37,9 +37,9 @@ export default function Page() {
             <button
               type="button"
               onClick={reset}
-              className="flex items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs font-semibold text-slate-600 shadow-sm transition-colors hover:bg-slate-50"
-            >
-              <RotateCcw className="size-4" /> New Game
+                className="flex shrink-0 items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-2.5 py-2 text-xs font-semibold text-slate-600 shadow-sm transition-colors hover:bg-slate-50 sm:px-3"
+              >
+                <RotateCcw className="size-4" /> <span className="hidden xs:inline sm:inline">New Game</span><span className="sr-only">Start a new game</span>
             </button>
           </header>
 

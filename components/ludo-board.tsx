@@ -111,12 +111,12 @@ export function LudoBoard({
             disabled={!t.movable}
             onClick={() => t.movable && onTokenClick(t.index)}
             aria-label={`${col.name} token ${t.index + 1}`}
-            className="absolute z-10 rounded-full transition-[left,top] duration-300 ease-out disabled:cursor-default"
+            className="absolute z-10 rounded-full p-1 transition-[left,top] duration-300 ease-out disabled:cursor-default touch-manipulation"
             style={{
               left: `${left}%`,
               top: `${top}%`,
-              width: `${PCT * 0.66}%`,
-              height: `${PCT * 0.66}%`,
+              width: `max(${PCT * 0.66}%, 32px)`,
+              height: `max(${PCT * 0.66}%, 32px)`,
               transform: "translate(-50%, -50%)",
               animation: t.movable ? "token-pulse 1s ease-in-out infinite" : undefined,
               zIndex: t.movable ? 30 : 10,
